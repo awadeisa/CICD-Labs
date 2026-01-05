@@ -20,6 +20,7 @@ In this project 🎥, we build a **production-grade CI/CD pipeline** using:
 This repository demonstrates how **real-world DevOps teams** design, automate, and deploy applications from **code commit to live production** using modern DevOps best practices.
 
 ---
+## working on cicd
 
 ## 🎯 What You Will Learn
 
