@@ -37,7 +37,7 @@ pipeline {
                         """
                     }
                 }
-                env.IMAGE_TAG = IMAGE_TAG
+            
             }
         }
 
