@@ -6,9 +6,9 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "moulashaik9618/multibranch-flask-app"
-        GIT_USER   = "Shaik-DevOpsLucky"
-        GIT_EMAIL  = "moula.cloud5@gmail.com"
+        IMAGE_NAME = "eisait/multibranch-flask-app"
+        GIT_USER   = "Awad-Eisa"
+        GIT_EMAIL  = "i_owad@hotmail.com"
     }
 
     stages {
@@ -37,6 +37,7 @@ pipeline {
                         """
                     }
                 }
+                env.IMAGE_TAG = IMAGE_TAG
             }
         }
 
@@ -45,7 +46,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(
-                        credentialsId: 'github-creds',
+                        credentialsId: 'github-cred',
                         usernameVariable: 'GIT_USERNAME',
                         passwordVariable: 'GIT_TOKEN'
                     )]) {
@@ -62,7 +63,7 @@ pipeline {
 
                         git add k8s/deployment.yaml
                         git diff --cached --quiet || git commit -m "Updated image to ${IMAGE_TAG}"
-                        git push https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/Shaik-DevOpsLucky/Production-Grade-Deployment-with-GitOps.git main
+                        git push https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/awadeisa/CICD-Labs.git main
                         """
                     }
                 }
